@@ -1,7 +1,10 @@
 import React from 'react';
 import Card from './Card';
+import { useSelector } from 'react-redux';
 
 const BlogList = () => {
+
+    const blogs = useSelector(state => state.blogs);
     return (
         <div className="relative max-w-7xl mx-auto">
             <div className="text-center">
@@ -20,7 +23,7 @@ const BlogList = () => {
 
             <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                 {
-                    [...new Array(6)].map((el, i) => <Card key={i} />)
+                    blogs.map(blog => <Card key={blog.id} blog={blog} />)
                 }
             </div>
 
