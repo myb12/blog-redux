@@ -1,10 +1,15 @@
 import React from 'react';
 import Card from './Card';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { allBlogAction } from '../redux/blogs/actions';
 
 const BlogList = () => {
-
     const blogs = useSelector(state => state.blogs);
+    const dispatch = useDispatch();
+
+    const handleAllBlog = () => {
+        dispatch(allBlogAction());
+    }
     return (
         <div className="relative max-w-7xl mx-auto">
             <div className="text-center">
@@ -21,7 +26,10 @@ const BlogList = () => {
                 </p>
             </div>
 
-            <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            <div className='flex justify-start'>
+                <button onClick={handleAllBlog} className="mt-8 px-4 py-2 rounded text-sm font-medium bg-indigo-100 text-indigo-800">All Blogs</button>
+            </div>
+            <div className="mt-4 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                 {
                     blogs.map(blog => <Card key={blog.id} blog={blog} />)
                 }

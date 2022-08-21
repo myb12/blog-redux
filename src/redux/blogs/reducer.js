@@ -1,8 +1,14 @@
-import { FILTERED, SEARCHED } from "./actionTypes";
+import { ALL_BLOG, FILTERED, SEARCHED } from "./actionTypes";
 import initialState from "./initialState";
 
 const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case ALL_BLOG:
+
+            return [
+                ...initialState
+            ];
+
         case FILTERED:
             const { filterBy, value } = payload;
 
@@ -12,7 +18,16 @@ const reducer = (state = initialState, { type, payload }) => {
 
         case SEARCHED:
 
-            return [...state]
+            if (!payload) {
+                return [
+                    ...initialState
+                ]
+            };
+
+
+            return [
+                ...state.filter(blog => blog.title.toLowerCase().includes(payload.toLowerCase()))
+            ]
 
 
         default:

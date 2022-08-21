@@ -1,4 +1,4 @@
-import { FILTERED, SEARCHED } from "./actionTypes"
+import { FILTERED, SEARCHED, ALL_BLOG } from "./actionTypes"
 
 export const filterAction = (filterBy, value) => {
     return {
@@ -14,5 +14,11 @@ export const searchAction = (value) => {
     return {
         type: SEARCHED,
         payload: value
+    }
+};
+
+export const allBlogAction = (value) => {
+    return {
+        type: ALL_BLOG,
     }
 };
