@@ -4,8 +4,11 @@ import initialState from "./initialState";
 const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case FILTERED:
+            const { filterBy, value } = payload;
 
-            return [...state]
+            return [
+                ...state.filter(blog => blog[filterBy] === value)
+            ];
 
         case SEARCHED:
 

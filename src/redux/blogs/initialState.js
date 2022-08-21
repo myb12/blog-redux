@@ -34,7 +34,7 @@ const initialState = [
         title: "Boost your conversion rate",
         image: 'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         category: 'Sports',
-        author: 'MA Noman Chowdhury',
+        author: 'Mohammad Yasin',
         authorAvatar: 'https://i.ibb.co/jTqvKdk/Yasin.jpg',
         createdAt: '11 Jul, 2022',
         readAt: '6 min read'
@@ -44,7 +44,7 @@ const initialState = [
         title: "Improve your customer experience",
         image: 'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         category: 'Software',
-        author: 'Nir Chowdhury',
+        author: 'Mohammad Asif',
         authorAvatar: 'https://i.ibb.co/jTqvKdk/Yasin.jpg',
         createdAt: '08 Feb, 2022',
         readAt: '11 min read'
@@ -54,7 +54,7 @@ const initialState = [
         title: "Improve your customer experience",
         image: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         category: 'Sports',
-        author: 'MD Shakiluzzaman',
+        author: 'Shofik Anam',
         authorAvatar: 'https://i.ibb.co/jTqvKdk/Yasin.jpg',
         createdAt: '20 March, 2022',
         readAt: '9 min read'

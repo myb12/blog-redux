@@ -1,8 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux'
+import { filterAction } from '../redux/blogs/actions';
 
 const Card = ({ blog }) => {
     const { title, image, category, author, authorAvatar, createdAt, readtAt } = blog;
+    const dispatch = useDispatch();
 
+    const handleFilter = (filterBy, value) => {
+        dispatch(filterAction(filterBy, value));
+    }
     return (
         <div
             className="flex flex-col rounded-lg shadow-lg overflow-hidden"
@@ -19,7 +25,7 @@ const Card = ({ blog }) => {
                 className="flex-1 bg-white p-6 flex flex-col justify-between"
             >
                 <div className="flex-1">
-                    <p className="text-sm font-medium text-indigo-600">
+                    <p onClick={() => handleFilter('category', category)} className="text-sm font-medium text-indigo-600">
                         <span
                             className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800"
                         >
@@ -35,7 +41,7 @@ const Card = ({ blog }) => {
                     </a>
                 </div>
                 <div className="mt-6 flex items-center">
-                    <div className="flex-shrink-0">
+                    <div onClick={() => handleFilter('author', author)} className="flex-shrink-0">
                         <img
                             className="h-10 w-10 rounded-full"
                             src={authorAvatar}
@@ -44,8 +50,8 @@ const Card = ({ blog }) => {
                     </div>
                     <div className="ml-3">
                         <p
-                            className="text-sm font-medium text-gray-900 hover:underline text-left"
-                        >
+                            onClick={() => handleFilter('author', author)}
+                            className="text-sm font-medium text-gray-900 hover:underline text-left">
                             {author}
                         </p>
                         <div
